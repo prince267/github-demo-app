@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import "./App.css";
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({
-  auth: "27d9fa7ee7e825d1550a09e579fce8abb580690c",
+  auth: ,
 });
 class App extends React.Component {
   constructor() {
