@@ -1,3 +1,4 @@
+// Paste your Github Outh Token here 
 const OUTH_TOKEN = "";
 const GIT_REPO = "react";
 const REPO_OWNER = "facebook";

@@ -1,10 +1,13 @@
 import { OUTH_TOKEN, GIT_REPO, REPO_OWNER } from "../Config";
 import { PER_PAGE_DATA } from "../contants";
 const { Octokit } = require("@octokit/core");
+
+// Create authentication for Api's
 const octokit = new Octokit({
   auth: OUTH_TOKEN,
 });
 
+// Get all the users who forked the repository
 const getForkedUsers = async (pageNumber) => {
   try {
     const forkedUsers = await octokit.request(
@@ -22,6 +25,7 @@ const getForkedUsers = async (pageNumber) => {
   }
 };
 
+// Follow Users
 const followUser = async (username) => {
   try {
     const response = await octokit.request("PUT /user/following/{username}", {

@@ -15,24 +15,24 @@ class App extends React.Component {
     this.getForkedUsers = this.getForkedUsers.bind(this);
     this.followUser = this.followUser.bind(this);
   }
+
   componentDidMount() {
     this.getForkedUsers();
   }
 
+  // Get all users who forked the repository 
   async getForkedUsers(pageNumber) {
     this.setState({ isLoading: true });
     const data = await getForkedUsers(pageNumber);
     this.setState({ forkedUsers: data, isLoading: false });
   }
 
+  // Follow Users
   async followUser(username) {
     const response = await followUser(username);
-    if(response.status=== 204){
-      alert(`You Followed ${username}`)
-    }
-    else(
-      alert("Something went wrong !!!!")
-    )
+    if (response.status === 204) {
+      alert(`You Followed ${username}`);
+    } else alert("Something went wrong !!!!");
   }
 
   previousPage() {
