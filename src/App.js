@@ -1,13 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { OUTH_TOKEN } from "./config";
 import "./App.css";
-const { Octokit } = require("@octokit/core");
+import { getForkedUsers, followUser } from "./api";
 
-const octokit = new Octokit({
-  auth: OUTH_TOKEN,
-});
 class App extends React.Component {
   constructor() {
     super();
@@ -22,6 +18,16 @@ class App extends React.Component {
     this.getForkedUsers();
   }
 
+  async getForkedUsers() {
+    const data = await getForkedUsers(this.state.pageNumber);
+    this.setState({ forkedUsers: data });
+  }
+
+  async followUser (username){
+    const response = await followUser(username)
+    console.log("Response is ***** ",response)
+  }
+
   previousPage() {
     this.setState({ pageNumber: this.state.pageNumber - 1 });
   }
@@ -29,26 +35,7 @@ class App extends React.Component {
   nextPage() {
     this.setState({ pageNumber: this.state.pageNumber + 1 });
   }
-  async getForkedUsers() {
-    const forkedUsers = await octokit.request(
-      "GET /repos/{owner}/{repo}/forks",
-      {
-        owner: "facebook",
-        repo: "react",
-        per_page: 30,
-        page: this.state.pageNumber,
-      }
-    );
-    console.log("Forked users Length **** ", forkedUsers.data);
-    this.setState({ forkedUsers: forkedUsers.data });
-  }
 
-  async followUser(username) {
-    const response = await octokit.request("PUT /user/following/{username}", {
-      username: username,
-    });
-    console.log("Response ***** ", response);
-  }
   render() {
     return (
       <div>
