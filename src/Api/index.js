@@ -18,7 +18,7 @@ const getForkedUsers = async (pageNumber) => {
     );
     return forkedUsers.data;
   } catch (err) {
-    return err;
+    return [];
   }
 };
 
