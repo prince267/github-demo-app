@@ -4,8 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Outh Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
 make sure that you select repo and user scopes and permission to grant this token.
+<br/>
 
 copy the Outh Token and paste it in src/Config/index.js
+<br/>
 const OUTH_TOKEN = "hello Paste The Token Here";
 
 ### `yarn start`
