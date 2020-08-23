@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import "./App.css";
-import { getForkedUsers, followUser } from "./api";
+import "./index.css";
+import { getForkedUsers, followUser } from "../Api";
 
 class App extends React.Component {
   constructor() {

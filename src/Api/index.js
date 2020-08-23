@@ -1,4 +1,5 @@
-import { OUTH_TOKEN } from "./config";
+import { OUTH_TOKEN } from "../config";
+import { PER_PAGE_DATA } from "../contants";
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({
   auth: OUTH_TOKEN,
@@ -11,7 +12,7 @@ const getForkedUsers = async (pageNumber) => {
       {
         owner: "facebook",
         repo: "react",
-        per_page: 30,
+        per_page: PER_PAGE_DATA,
         page: pageNumber,
       }
     );
