@@ -1,10 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { OUTH_TOKEN } from "./config";
 import "./App.css";
 const { Octokit } = require("@octokit/core");
+
 const octokit = new Octokit({
-  auth: ,
+  auth: OUTH_TOKEN,
 });
 class App extends React.Component {
   constructor() {
