@@ -8,11 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4.  Run `npm install` in order to install dependencies <br />
    
 ## Create Github Outh Token 
-1. create Github Outh Token [Outh Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)<br/>
+1. create Github Outh Token [Outh Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 2.make sure that you select repo and user scopes and permission to grant this token.
-<br/>
 3.copy the Outh Token and paste it in `src/Config/index.js`<br/>
-4. `const OUTH_TOKEN = "hello Paste The Token Here"`;
+4.`const OUTH_TOKEN = "hello Paste The Token Here"`;
 
 ### `yarn start`
 
